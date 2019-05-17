@@ -1,0 +1,7 @@
+name: base-agent
+title: validate base image
+summary: Verify packages and docker-engine health
+version: 1.0.0
+maintainer: andrew.larse514@gmail.com
+copyright: andrew.larse514@gmail.com
+license: Apache-2.0
