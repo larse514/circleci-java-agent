@@ -6,6 +6,7 @@ jobs:
       environment:
         IMAGE: larse514/circleci-java-agent
       steps:
+      - setup_remote_docker
       - checkout
       - run:
           name: Build && Test
