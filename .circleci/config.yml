@@ -11,8 +11,8 @@ jobs:
       - run:
           name: Build && Test
           command: |
-              make
+              make IMAGE="${IMAGE}" TAG="${CIRCLE_BUILD_NUM}"
       - run:
           name: Deploy
           command: |
-              make release TAG="${IMAGE}:${CIRCLE_BUILD_NUM}"
+              make release TAG="${CIRCLE_BUILD_NUM}"
