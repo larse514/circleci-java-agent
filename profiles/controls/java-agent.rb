@@ -9,6 +9,21 @@ control 'packages' do
     its('stdout') { should include ('gzip') }
     its('stdout') { should include ('ca-certificates') }
     its('stdout') { should include ('docker') }
+    its('stdout') { should include ('bash') }
+    its('stdout') { should include ('bash-doc') }
+    its('stdout') { should include ('bash-completion') }
+    its('stdout') { should include ('curl') }
+    its('stdout') { should include ('wget') }
+    its('stdout') { should include ('openssl') }
+    its('stdout') { should include ('openrc') }
+    its('stdout') { should include ('go') }
+    its('stdout') { should include ('python3') }
+    its('stdout') { should include ('ruby') }
+    its('stdout') { should include ('ruby-bundler') }
+    its('stdout') { should include ('ruby-dev') }
+    its('stdout') { should include ('g++') }
+    its('stdout') { should include ('libffi-dev') }
+    its('stdout') { should include ('musl-dev') }
     its('stdout') { should include ('make') }
     its('stdout') { should include ('jq') }
     its('stdout') { should include ('nss') }

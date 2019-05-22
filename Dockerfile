@@ -8,6 +8,12 @@ RUN apk update && apk upgrade
 # base packages for docker environment
 RUN apk add --no-cache git openssh tar gzip ca-certificates docker jq
 
+# packages for ruby and bash
+RUN apk add --no-cache bash bash-doc bash-completion curl wget openssl openrc python3 ruby ruby-bundler ruby-dev g++ libffi-dev musl-dev curl
+
+# add docker service to runlevel https://manpages.debian.org/testing/openrc/rc-update.8.en.html (from https://wiki.alpinelinux.org/wiki/Docker)
+RUN rc-update add docker boot
+
 # Install node
 RUN apk add --update nodejs=10.14.2-r0 nodejs-npm
 
