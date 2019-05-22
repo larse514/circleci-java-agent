@@ -5,7 +5,6 @@ default: dependencies build test
 .PHONY: dependencies build test
 
 dependencies: 
-	@gem install bundler
 	@bundle install
 
 build: dependencies
