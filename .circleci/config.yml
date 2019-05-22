@@ -1,0 +1,17 @@
+version: 2
+jobs:
+    build:
+      docker:
+      - image: larse514/circleci-java-agent:latest
+      environment:
+        IMAGE: larse514/circleci-java-agent
+      steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+              make
+      - run:
+          name: Deploy
+          command: |
+              make release TAG="${IMAGE}:${CIRCLE_BUILD_NUM}"

@@ -1,4 +1,4 @@
-IMAGE=java-agent
+IMAGE=larse514/circleci-java-agent
 TAG=latest
 
 default: dependencies build test
@@ -13,5 +13,9 @@ build: dependencies
 
 test:
 	./scripts/test.sh $(IMAGE) $(TAG)
+
+release:
+	./scripts/release.sh $(IMAGE) $(TAG)
+
 clean:
 	./scripts/cleanup.sh $(IMAGE)
