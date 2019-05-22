@@ -1,4 +1,4 @@
-IMAGE=base-agent
+IMAGE=java-agent
 TAG=latest
 
 default: dependencies build test

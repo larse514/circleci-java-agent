@@ -1,10 +1,16 @@
-control 'apt list all' do
+control 'packages' do
   impact 1.0
-  title 'confirm apt dependencies installed'
-  desc 'confirm correct apt dependencies are installed'
-  describe command('apt list --installed') do
+  title 'confirm package installation'
+  desc 'confirm all desired packages are installed'
+  describe command('apk info') do
+    its('stdout') { should include ('git') }
+    its('stdout') { should include ('openssh') }
+    its('stdout') { should include ('tar') }
+    its('stdout') { should include ('gzip') }
+    its('stdout') { should include ('ca-certificates') }
+    its('stdout') { should include ('docker') }
     its('stdout') { should include ('make') }
-    its('stdout') { should include ('node') }
+    its('stdout') { should include ('jq') }
   end
 end
 
@@ -13,7 +19,7 @@ control 'make version' do
   title 'confirm make is installed'
   desc 'confirm correct version of make is installed'
   describe command('make -v') do
-    its('stdout') { should include ('GNU Make 4.1') }
+    its('stdout') { should include ('GNU Make 4.2.1') }
   end
 end
 
@@ -22,7 +28,7 @@ control 'node version' do
   title 'confirm node is installed'
   desc 'confirm correct version of node is installed'
   describe command('node -v') do
-    its('stdout') { should include ('v10.15.3') }
+    its('stdout') { should include ('v10.14.2') }
   end
 end
 
