@@ -24,6 +24,7 @@ control 'packages' do
     its('stdout') { should include ('make') }
     its('stdout') { should include ('ruby-doc') }
     its('stdout') { should include ('nss') }
+    its('stdout') { should include ('sudo') }
   end
 end
 
