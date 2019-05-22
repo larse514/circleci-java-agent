@@ -6,10 +6,10 @@ LABEL maintainer github/larse514
 RUN apk update && apk upgrade
 
 # base packages for docker environment
-RUN apk add --no-cache git openssh tar gzip ca-certificates docker jq
+RUN apk add --no-cache git openssh tar gzip ca-certificates docker
 
-# packages for ruby and bash
-RUN apk add --no-cache bash bash-doc bash-completion curl wget openssl openrc python3 ruby ruby-doc ruby-bundler ruby-dev g++ libffi-dev musl-dev curl
+# packages for ruby 
+RUN apk add --no-cache curl wget openssl openrc python3 ruby ruby-doc ruby-bundler ruby-dev g++ libffi-dev musl-dev curl
 
 # add docker service to runlevel https://manpages.debian.org/testing/openrc/rc-update.8.en.html (from https://wiki.alpinelinux.org/wiki/Docker)
 RUN rc-update add docker boot

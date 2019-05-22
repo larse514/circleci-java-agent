@@ -9,9 +9,6 @@ control 'packages' do
     its('stdout') { should include ('gzip') }
     its('stdout') { should include ('ca-certificates') }
     its('stdout') { should include ('docker') }
-    its('stdout') { should include ('bash') }
-    its('stdout') { should include ('bash-doc') }
-    its('stdout') { should include ('bash-completion') }
     its('stdout') { should include ('curl') }
     its('stdout') { should include ('wget') }
     its('stdout') { should include ('openssl') }
@@ -25,7 +22,6 @@ control 'packages' do
     its('stdout') { should include ('libffi-dev') }
     its('stdout') { should include ('musl-dev') }
     its('stdout') { should include ('make') }
-    its('stdout') { should include ('jq') }
     its('stdout') { should include ('ruby-doc') }
     its('stdout') { should include ('nss') }
   end
