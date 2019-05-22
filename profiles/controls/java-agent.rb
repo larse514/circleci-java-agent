@@ -26,6 +26,7 @@ control 'packages' do
     its('stdout') { should include ('musl-dev') }
     its('stdout') { should include ('make') }
     its('stdout') { should include ('jq') }
+    its('stdout') { should include ('ruby-doc') }
     its('stdout') { should include ('nss') }
   end
 end
