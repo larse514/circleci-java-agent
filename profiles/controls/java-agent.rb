@@ -40,3 +40,21 @@ control 'newman version' do
     its('stdout') { should include ('4.5.0') }
   end
 end
+
+control 'aws cli version' do
+  impact 1.0
+  title 'confirm aws cli is installed'
+  desc 'confirm correct version of aws cli is installed'
+  describe command('aws --version') do
+    its('stderr') { should include ('aws-cli/1.16.163') }
+  end
+end
+
+control 'docker version' do
+  impact 1.0
+  title 'confirm docker is installed'
+  desc 'confirm correct version of docker is installed'
+  describe command('docker -v') do
+    its('stdout') { should include ('Docker version 18.09.1-ce') }
+  end
+end

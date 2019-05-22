@@ -1,4 +1,5 @@
 FROM alpine:3.9.4
+LABEL maintainer github/larse514
 
 # Generally it is best practice for enterprises
 #  to maintain a mirror of approved libraries
@@ -14,5 +15,14 @@ RUN apk add --update nodejs=10.14.2-r0 nodejs-npm
 RUN npm install newman@4.5.0 -g
 # # Install make
 RUN apk add make=4.2.1-r2
+
+# Install git
+RUN apk add git
+
+# Install awscli
+RUN apk -Uuv add groff less python py-pip \
+    && pip install awscli \
+    && apk --purge -v del py-pip \
+    && rm /var/cache/apk/* 
 
 HEALTHCHECK NONE
