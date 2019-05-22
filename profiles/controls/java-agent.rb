@@ -96,6 +96,15 @@ control 'Java version' do
   end
 end
 
+control 'Maven version' do
+  impact 1.0
+  title 'confirm Maven version'
+  desc 'Confirm correct version of Maven'
+  describe command('mvn -v') do
+    its('stdout') { should include ('4.9.31-moby') }
+  end
+end
+
 control 'libnss3.so' do
   impact 1.0
   title 'confirm libnss3.so installation'
