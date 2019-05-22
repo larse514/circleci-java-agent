@@ -14,6 +14,9 @@ RUN apk add --no-cache bash bash-doc bash-completion curl wget openssl openrc py
 # add docker service to runlevel https://manpages.debian.org/testing/openrc/rc-update.8.en.html (from https://wiki.alpinelinux.org/wiki/Docker)
 RUN rc-update add docker boot
 
+# Install bundler
+RUN gem install bundler --no-document
+
 # Install node
 RUN apk add --update nodejs=10.14.2-r0 nodejs-npm
 

@@ -103,3 +103,12 @@ control 'libnss3.so' do
     its('stdout') { should include ('libnss3.so') } # ensure nss libs exist from apline:3.9 issue: https://github.com/docker-library/openjdk/issues/289
   end
 end
+
+control 'bundler' do
+  impact 1.0
+  title 'confirm bundler installation'
+  desc 'confirm bundler is in image'
+  describe command('bundler -v') do
+    its('stdout') { should include ('Bundler version 2.0.1') }
+  end
+end
