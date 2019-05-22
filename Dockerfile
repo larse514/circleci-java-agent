@@ -1,9 +1,11 @@
-FROM ruby:latest
+FROM circleci/openjdk:8u181-jdk-node-browsers
 
-# Infra scecific
-RUN gem install rake -v '~> 12.3'
-#The bigdecimal and webrick are dependencies for awspec and currently not included with the awspec install
-RUN gem install awspec -v '1.17.4'
-RUN gem install aws-sdk -v '~> 3.0.1'
-    
+# Install node
+RUN sudo apt-get install -y nodejs
+# Install newman 
+RUN sudo npm install newman@4.5.0 -g
+# Install make
+RUN apt-cache policy nodejs
+RUN sudo apt-get install --reinstall make=4.1-9.1
+
 HEALTHCHECK NONE
