@@ -7,5 +7,6 @@ TAG=$2
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+echo "$DOCKER_PASSWORD" | docker login --username ${DOCKER_USER} --password-stdin
+
 docker push ${IMAGE}:${TAG}
