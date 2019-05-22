@@ -1,6 +1,6 @@
-name: base-agent
+name: java-agent
 title: validate base image
-summary: Verify packages and docker-engine health
+summary: Verify packages
 version: 1.0.0
 maintainer: andrew.larse514@gmail.com
 copyright: andrew.larse514@gmail.com

@@ -2,6 +2,7 @@ IMAGE=base-agent
 TAG=latest
 
 default: dependencies build test
+.PHONY: dependencies build test
 
 dependencies: 
 	@gem install bundler
@@ -12,3 +13,5 @@ build: dependencies
 
 test:
 	./scripts/test.sh $(IMAGE) $(TAG)
+clean:
+	./scripts/cleanup.sh $(IMAGE)
