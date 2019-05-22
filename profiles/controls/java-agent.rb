@@ -101,7 +101,7 @@ control 'Maven version' do
   title 'confirm Maven version'
   desc 'Confirm correct version of Maven'
   describe command('mvn -v') do
-    its('stdout') { should include ('4.9.31-moby') }
+    its('exit_status') { should eq 0 }
   end
 end
 
