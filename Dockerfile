@@ -50,3 +50,5 @@ RUN wget http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/ap
   mv apache-maven-$MAVEN_VERSION /usr/lib/mvn
 
 HEALTHCHECK NONE
+
+ENTRYPOINT ["/bin/bash"]
