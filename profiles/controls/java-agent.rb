@@ -128,3 +128,12 @@ control 'bundler' do
     its('stdout') { should include ('Bundler version 2.0.1') }
   end
 end
+
+control 'bash' do
+  impact 1.0
+  title 'confirm bash installation'
+  desc 'confirm bash is in image'
+  describe command('bash --version') do
+    its('stdout') { should include ('4.4.19(1)-release') }
+  end
+end
