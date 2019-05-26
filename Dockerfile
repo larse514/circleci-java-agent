@@ -18,7 +18,7 @@ RUN rc-update add docker boot
 RUN gem install bundler --no-document
 
 # Install node
-RUN apk add --update nodejs=10.14.2-r0 nodejs-npm
+RUN apk add --update nodejs=10.15.3-r0 nodejs-npm=10.15.3-r0
 
 # # Install newman 
 RUN npm install newman@4.5.0 -g
