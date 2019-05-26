@@ -55,13 +55,22 @@ control 'newman version' do
   end
 end
 
+control 'serverless version' do
+  impact 1.0
+  title 'confirm serverless is installed'
+  desc 'confirm correct version of serverless is installed'
+  describe command('sls -v') do
+    its('stdout') { should include ('1.43.0') }
+  end
+end
+
 control 'aws cli version' do
   impact 1.0
   title 'confirm aws cli is installed'
   desc 'confirm correct version of aws cli is installed'
   describe command('aws --version') do
     # It is worth noting that the `aws --version` command writes to stderr, not stdout
-    its('stderr') { should include ('aws-cli/1.16.163') }
+    its('stderr') { should include ('aws-cli/1.16.166') }
   end
 end
 
